@@ -1,0 +1,20 @@
+.gradle
+/local.properties
+/build
+/captures
+.externalNativeBuild
+.cxx
+build/
+**/build/
+
+# IDE settings
+.idea/
+*.iml
+
+# Log/OS files
+*.log
+.DS_Store
+
+# Others
+.cxx/
+.externalNativeBuild/
