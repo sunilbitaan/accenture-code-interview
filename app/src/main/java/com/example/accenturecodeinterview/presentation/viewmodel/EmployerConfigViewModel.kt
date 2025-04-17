@@ -2,6 +2,7 @@ package com.example.accenturecodeinterview.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.accenturecodeinterview.domian.EmployerData
 import com.example.accenturecodeinterview.domian.GetEmployerUseCase
 import com.example.accenturecodeinterview.presentation.EmployerUiState
 import com.example.accenturecodeinterview.utils.UseCaseResult
@@ -33,5 +34,9 @@ class EmployerConfigViewModel(private val getEmployerUseCase: GetEmployerUseCase
                 }
             }
         }
+    }
+    fun getEmployerData(employerId: Int): EmployerData {
+        return employerListUIState.value.employers.find { it.EmployerID == employerId }
+            ?: throw IllegalStateException("Employer with ID $employerId not found")
     }
 }

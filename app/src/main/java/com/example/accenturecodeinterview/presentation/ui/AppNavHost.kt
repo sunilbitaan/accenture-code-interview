@@ -15,6 +15,12 @@ fun AppNavHost(viewModel: EmployerConfigViewModel) {
         composable("search") {
             EmployerListUI(navController, viewModel)
         }
+        composable("detail/{employerId}") { backStackEntry ->
+            val employerId = backStackEntry.arguments?.getString("employerId")?.toIntOrNull()
+            employerId?.let {
+                EmployerDetailScreen(navController, it, viewModel)
+            }
+        }
     }
 
 }

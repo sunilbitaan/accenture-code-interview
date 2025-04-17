@@ -1,6 +1,7 @@
 package com.example.accenturecodeinterview.presentation.ui
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -120,6 +121,9 @@ fun EmployerCard(navController: NavController, msg: EmployerData) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
+                .clickable {
+                    navController.navigate("detail/${msg.EmployerID}")
+                }
                 .background(MaterialTheme.colorScheme.surface)
                 .padding(10.dp)
                 .clip(RoundedCornerShape(12.dp)),
