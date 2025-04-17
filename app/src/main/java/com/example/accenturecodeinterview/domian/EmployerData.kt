@@ -4,8 +4,8 @@ package com.example.accenturecodeinterview.domian
  * Create By Sunil
  */
 data class EmployerData(
-    val employerID: Int,
-    val name: String,
-    val place: String,
-    val discountPercentage: Int
+    val EmployerID: Int,
+    val Name: String,
+    val Place: String,
+    val DiscountPercentage: Int
 )

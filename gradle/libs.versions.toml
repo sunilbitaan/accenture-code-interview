@@ -17,6 +17,9 @@ converterGson = "2.9.0"
 adapterRxjava2 = "2.4.0"
 runtimeLivedata = "1.7.8"
 retrofit2KotlinCoroutinesAdapter = "0.9.2"
+navigationComposeVersion = "2.8.9"
+material = "1.12.0"
+material3Android = "1.3.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -34,6 +37,8 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-material3-android = { group = "androidx.compose.material3", name = "material3-android", version.ref = "material3Android" }
+androidx-navigation-compose-v276 = { module = "androidx.navigation:navigation-compose", version.ref = "navigationComposeVersion" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koinAndroid" }
 androidx-hilt-work = { module = "androidx.hilt:hilt-work", version.ref = "hiltWork" }
@@ -44,6 +49,7 @@ converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 androidx-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata", version.ref = "runtimeLivedata" }
 retrofit2-kotlin-coroutines-adapter = { module = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter", version.ref = "retrofit2KotlinCoroutinesAdapter" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
