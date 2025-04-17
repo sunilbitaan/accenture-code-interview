@@ -4,10 +4,13 @@ import com.example.accenturecodeinterview.BuildConfig
 import com.example.accenturecodeinterview.data.EmployerApiInterface
 import com.example.accenturecodeinterview.data.EmployerRepositoryImpl
 import com.example.accenturecodeinterview.domian.EmployerRepository
+import com.example.accenturecodeinterview.domian.GetEmployerUseCase
+import com.example.accenturecodeinterview.presentation.viewmodel.EmployerConfigViewModel
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.CallAdapter
 import retrofit2.Retrofit
@@ -33,6 +36,14 @@ val appModules = module {
     single<EmployerRepository> {
         EmployerRepositoryImpl(get()) // get() provides EmployerApiInterface
     }
+
+    // UseCase
+    factory {
+        GetEmployerUseCase(get()) // get() provides EmployerRepository
+    }
+
+    // Specific viewModel pattern to tell Koin how to build EmployerConfigViewModel
+    viewModel { EmployerConfigViewModel(get()) }
 }
 
 /* Returns a custom OkHttpClient instance with interceptor. Used for building Retrofit service */
