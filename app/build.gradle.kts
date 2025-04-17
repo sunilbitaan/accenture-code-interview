@@ -29,9 +29,19 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField(
+                "String",
+                "SERVER_REMOTE_URL",
+                "\"https://cba.kooijmans.nl/CBAEmployerservice.svc/rest/\""
+            )
         }
         debug {
             isDebuggable = true
+            buildConfigField(
+                "String",
+                "SERVER_REMOTE_URL",
+                "\"https://cba.kooijmans.nl/CBAEmployerservice.svc/rest/\""
+            )
         }
     }
     compileOptions {
@@ -71,4 +81,12 @@ dependencies {
     implementation(libs.koin.core)
 
     implementation(libs.androidx.hilt.work)
+
+    implementation(libs.androidx.runtime.livedata)
+    implementation(libs.gson)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.adapter.rxjava2)
+    implementation(libs.logging.interceptor)
+    implementation(libs.retrofit2.kotlin.coroutines.adapter)
 }

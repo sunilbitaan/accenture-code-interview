@@ -4,6 +4,7 @@ package com.example.accenturecodeinterview
  * Create By Sunil Kumar
  */
 import android.app.Application
+import com.example.accenturecodeinterview.di.appModules
 import dagger.hilt.android.HiltAndroidApp
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.GlobalContext.startKoin
@@ -15,7 +16,7 @@ class AndroidApplication : Application() {
         super.onCreate()
         startKoin {
             androidContext(androidContext = this@AndroidApplication)
-            modules(listOf())
+            modules(appModules)
         }
     }
 }
