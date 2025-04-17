@@ -48,6 +48,13 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            merges += "META-INF/LICENSE.md"
+            merges += "META-INF/LICENSE-notice.md"
+        }
+    }
     kotlinOptions {
         jvmTarget = "11"
     }
@@ -76,7 +83,7 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-    implementation (libs.androidx.work.runtime)
+    implementation(libs.androidx.work.runtime)
 
     // Koin main features for Android (Scope,ViewModel ...)
     implementation(libs.koin.android)
@@ -92,4 +99,13 @@ dependencies {
     implementation(libs.adapter.rxjava2)
     implementation(libs.logging.interceptor)
     implementation(libs.retrofit2.kotlin.coroutines.adapter)
+
+    androidTestImplementation(libs.mockk)
+    // Kotlin Test Assertions
+    androidTestImplementation(libs.kotlin.test)
+
+    androidTestImplementation(libs.kotlinx.coroutines.test)
+
+    // Turbine for Flow testing
+    androidTestImplementation(libs.turbine)
 }
