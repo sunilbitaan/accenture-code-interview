@@ -1,4 +1,4 @@
-#Accenture-Code-Challenge
+# Accenture-Code-Challenge
 
 This is an Android application developed using Kotlin. The application is built with Android Studio Koala | 2024.1.1 and uses Gradle for build and dependency management.
 
